@@ -93,6 +93,9 @@ if st.button("Calcular Premiação"):
     
     fatp="{:,.0f}".format(fatp) 
     fatp = fatp.replace(",",".")
+
+    prems="{:,.0f}".format(prems) 
+    prems = prems.replace(",",".")
         
     valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiação EquityBack",prems],["Premiação Final",premf]]
     df = pd.DataFrame(valores,columns=['KPI','R$ em Ações'])
