@@ -50,6 +50,29 @@ if st.button("Calcular Premiação"):
 
         premf = (fatp+incp)
 
+        premf="{:,.0f}".format(premf) 
+        premf = premf.replace(",",".")
+        
+        incp="{:,.0f}".format(incp) 
+        incp = incp.replace(",",".")
+        
+        fatp="{:,.0f}".format(fatp) 
+        fatp = fatp.replace(",",".")
+
+        prems = 0
+        tx = 0
+        
+        prems="{:,.0f}".format(prems) 
+        prems = prems.replace(",",".")
+
+        tx="{:.0%}".format(tx) 
+            
+        valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiação EquityBack",prems],["Premiação Final",premf]]
+        df = pd.DataFrame(valores,columns=['KPI','R$ em Ações'])
+
+        st.caption(f"Premiações mostradas abaixo estão em Reais por ações da Companhia.")
+        st.dataframe(df) 
+
     elif aai>=3:
 
         if aai >= 9:
@@ -85,24 +108,24 @@ if st.button("Calcular Premiação"):
         
         premf = (incp)+(fatp)+prems
 
-    premf="{:,.0f}".format(premf) 
-    premf = premf.replace(",",".")
-    
-    incp="{:,.0f}".format(incp) 
-    incp = incp.replace(",",".")
-    
-    fatp="{:,.0f}".format(fatp) 
-    fatp = fatp.replace(",",".")
-
-    prems="{:,.0f}".format(prems) 
-    prems = prems.replace(",",".")
-
-    tx="{:.0%}".format(tx) 
+        premf="{:,.0f}".format(premf) 
+        premf = premf.replace(",",".")
         
-    valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiação EquityBack",prems],["Premiação Final",premf]]
-    df = pd.DataFrame(valores,columns=['KPI','R$ em Ações'])
+        incp="{:,.0f}".format(incp) 
+        incp = incp.replace(",",".")
+        
+        fatp="{:,.0f}".format(fatp) 
+        fatp = fatp.replace(",",".")
 
-    st.caption(f"Premiações mostradas abaixo estão em Reais por ações da Companhia.")
-    st.dataframe(df) 
+        prems="{:,.0f}".format(prems) 
+        prems = prems.replace(",",".")
+
+        tx="{:.0%}".format(tx) 
+            
+        valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiação EquityBack",prems],["Premiação Final",premf]]
+        df = pd.DataFrame(valores,columns=['KPI','R$ em Ações'])
+
+        st.caption(f"Premiações mostradas abaixo estão em Reais por ações da Companhia.")
+        st.dataframe(df) 
 
     
