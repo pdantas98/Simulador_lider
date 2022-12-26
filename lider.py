@@ -79,11 +79,11 @@ if st.button("Calcular Premiação"):
         elif fat < 2000000:
             fatp = 0    
 
-        premf = (prem*tx)
-        fatp = premf*fatp
-        incp = premf*incp
+        prems = (prem*tx)
+        fatp = prems*fatp
+        incp = prems*incp
         
-        premf = (incp)+(fatp)+premf
+        premf = (incp)+(fatp)+prems
 
     premf="{:,.0f}".format(premf) 
     premf = premf.replace(",",".")
@@ -94,7 +94,7 @@ if st.button("Calcular Premiação"):
     fatp="{:,.0f}".format(fatp) 
     fatp = fatp.replace(",",".")
         
-    valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiaão Final",premf]]
+    valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiação EquityBack",prems],["Premiação Final",premf]]
     df = pd.DataFrame(valores,columns=['KPI','R$ em Ações'])
 
     st.caption(f"Premiações mostradas abaixo estão em Reais por ações da Companhia.")
