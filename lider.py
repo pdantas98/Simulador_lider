@@ -98,11 +98,11 @@ if st.button("Calcular Premiação"):
             fatp = 0    
 
         prem = ((inc/1000000)*600)+((fat/1000000)*7500)
-
-
-
         #Faturamento final que será visto
         prems = (prem*tx)
+
+        fatp = prems*fatp
+        incp = prems*incp
      
         kpi1 = 0
         kpi2 = (prems*0.25)
@@ -119,8 +119,8 @@ if st.button("Calcular Premiação"):
         elif input_ROA < 0.30:
             pcroa = (prems*0)
 
-        fatp = prems*fatp
-        incp = prems*incp
+
+
         premf = (incp)+(fatp)+prems+pcroa
         premf2 = (incp)+(fatp)+prems+pcroa+kpi2
         premf3 = (incp)+(fatp)+prems+pcroa+kpi3
