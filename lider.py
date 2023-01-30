@@ -140,16 +140,16 @@ if st.button("Calcular Premiação"):
         premf4 = premf4.replace(",",".")
 
         kpi1="{:,.0f}".format(kpi1) 
-        kpi1 = kpi2.replace(",",".")
+        kpi1 = kpi1.replace(",",".")
 
         kpi2="{:,.0f}".format(kpi2) 
         kpi2 = kpi2.replace(",",".")
 
         kpi3="{:,.0f}".format(kpi3) 
-        kpi3 = kpi2.replace(",",".")
+        kpi3 = kpi3.replace(",",".")
 
         kpi4="{:,.0f}".format(kpi4) 
-        kpi4 = kpi2.replace(",",".")
+        kpi4 = kpi4.replace(",",".")
 
 
         incp="{:,.0f}".format(incp) 
