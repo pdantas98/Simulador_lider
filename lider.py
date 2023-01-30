@@ -17,7 +17,7 @@ fat2="{:,.0f}".format(fat)
 fat2 = fat2.replace(",",".")
 st.caption(f"Faturamento total Selecionada: R$ {fat2}")
 
-input_ROA=st.number_input("ROA médio do ano")
+input_ROA=st.number_input("ROA médio do ano da Filial")
 
 if st.button("Calcular Premiação"):
 
@@ -104,6 +104,11 @@ if st.button("Calcular Premiação"):
         #Faturamento final que será visto
         prems = (prem*tx)
      
+        kpi1 = 0
+        kpi2 = (prems*0.25)
+        kpi3 = (prems*0.75)
+        kpi4 = (prems*1)
+
         #Variante do ROA
         if input_ROA >= 0.75:
             pcroa = (prems*1)
@@ -117,7 +122,10 @@ if st.button("Calcular Premiação"):
         fatp = prems*fatp
         incp = prems*incp
         premf = (incp)+(fatp)+prems+pcroa
-
+        premf2 = (incp)+(fatp)+prems+pcroa+kpi2
+        premf3 = (incp)+(fatp)+prems+pcroa+kpi3
+        premf4 = (incp)+(fatp)+prems+pcroa+kpi4
+        
         #Ajustar formatação
         premf="{:,.0f}".format(premf) 
         premf = premf.replace(",",".")
@@ -137,8 +145,8 @@ if st.button("Calcular Premiação"):
         tx="{:.0%}".format(tx) 
 
         #Tabela    
-        valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiação EquityBack",prems],["Premiação ROA Filial",pcroa],["Premiação Final",premf]]
-        df = pd.DataFrame(valores,columns=['KPI','R$ em Ações'])
+        valores = [["Premiação Faturamento",fatp,fatp,fatp,fatp],["Premiação Incremento",incp,incp,incp,incp],["% de Premiação do AAI",tx,tx,tx,tx],["Premiação EquityBack",prems,prems,prems,prems],["Adicional ROA",pcroa,pcroa,pcroa,pcroa],["Adicional KPI Global",kpi1,kpi2,kpi3,kpi4],["Premiação Final",premf,premf2,premf3,premf4]]
+        df = pd.DataFrame(valores,columns=['KPI','Meta Global <80%','Meta Global >80%','Meta Global >90%','Meta Global >100%'])
 
         st.caption(f"Premiações mostradas abaixo estão em Reais por ações da Companhia.")
         st.dataframe(df) 
