@@ -99,18 +99,21 @@ if st.button("Calcular Premiação"):
 
         prem = ((inc/1000000)*600)+((fat/1000000)*7500)
 
-     #Variante do ROA
-        if input_ROA >= 0.75:
-            pcroa = (prem*1)
-        elif input_ROA >= 0.60 and input_ROA < 0.75:
-            pcroa = (prem*0.75)
-        elif input_ROA >= 0.30 and input_ROA < 0.60:
-            pcroa = (prem*0.25)
-        elif input_ROA < 0.30:
-            pcroa = (prem*0)
+
 
         #Faturamento final que será visto
         prems = (prem*tx)
+     
+        #Variante do ROA
+        if input_ROA >= 0.75:
+            pcroa = (prems*1)
+        elif input_ROA >= 0.60 and input_ROA < 0.75:
+            pcroa = (prems*0.75)
+        elif input_ROA >= 0.30 and input_ROA < 0.60:
+            pcroa = (prems*0.25)
+        elif input_ROA < 0.30:
+            pcroa = (prems*0)
+
         fatp = prems*fatp
         incp = prems*incp
         premf = (incp)+(fatp)+prems+pcroa
