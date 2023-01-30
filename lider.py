@@ -137,7 +137,7 @@ if st.button("Calcular Premiação"):
         tx="{:.0%}".format(tx) 
 
         #Tabela    
-        valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiação EquityBack",prems],["Premiação Final",premf],["Premiação ROA Filial",pcroa]]
+        valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["% de Premiação do AAI",tx],["Premiação EquityBack",prems],["Premiação ROA Filial",pcroa],["Premiação Final",premf]]
         df = pd.DataFrame(valores,columns=['KPI','R$ em Ações'])
 
         st.caption(f"Premiações mostradas abaixo estão em Reais por ações da Companhia.")
