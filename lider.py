@@ -129,7 +129,29 @@ if st.button("Calcular Premiação"):
         #Ajustar formatação
         premf="{:,.0f}".format(premf) 
         premf = premf.replace(",",".")
-        
+
+        premf2="{:,.0f}".format(premf2) 
+        premf2 = premf2.replace(",",".")
+
+        premf3="{:,.0f}".format(premf3) 
+        premf3 = premf3.replace(",",".")
+
+        premf4="{:,.0f}".format(premf4) 
+        premf4 = premf4.replace(",",".")
+
+        kpi1="{:,.0f}".format(kpi1) 
+        kpi1 = kpi2.replace(",",".")
+
+        kpi2="{:,.0f}".format(kpi2) 
+        kpi2 = kpi2.replace(",",".")
+
+        kpi3="{:,.0f}".format(kpi3) 
+        kpi3 = kpi2.replace(",",".")
+
+        kpi4="{:,.0f}".format(kpi4) 
+        kpi4 = kpi2.replace(",",".")
+
+
         incp="{:,.0f}".format(incp) 
         incp = incp.replace(",",".")
         
