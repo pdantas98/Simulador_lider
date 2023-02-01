@@ -5,6 +5,13 @@ import numpy as np
 st.title('Simulador do Partnership 2023 - Líder')
 st.caption("Use este simulador para calcular quanto de premiação você poderá receber ao final do ano. Importante frisar que a premiação é calculada em cima de valores preenchidos por você, devem ser considerados como uma aproximação.")
 st.sidebar.text("Informações do Assessor")
+st.sidebar.button("Kpis Partnership")
+st.sidebar.button("Simulador")
+st.sidebar.button("Campanhas")
+st.sidebar.button("Meus Clientes")
+
+
+
 
 aai=st.number_input("Quanto Assessores premiados?",format="%.0f")
 
